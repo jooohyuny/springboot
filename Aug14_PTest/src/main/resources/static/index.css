@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* CSS */
+.chead {
+    display: flex; /* 부모 요소를 플렉스 박스로 설정하여 내부 아이템을 가로로 정렬 */
+    justify-content: space-between; /* 내부 아이템 간 간격을 최대로 확장하여 정렬 */
+    align-items: center; /* 아이템을 수직으로 가운데 정렬 */
+    text-align-last: center;
+}
+
+.logo-search {
+    display: flex; /* 로고와 검색을 가로로 나란히 정렬 */
+    align-items: center; /* 아이템을 수직으로 가운데 정렬 */
+}
+
+.logo {
+    font-size: 25pt;
+    margin-right: 150px; /* 로고와 검색 사이 간격 */
+}
+
+.search {
+    margin-left: 150px; /* 로고와 검색 사이 간격 */
+    display: flex; /* 검색 요소를 가로로 나란히 정렬 */
+    align-items: center; /* 아이템을 수직으로 가운데 정렬 */
+}
+
+.login {
+    margin-left: 150px; /* 로그인 버튼과 검색 사이 간격 */
+}
+
+.logo{
+	color : rgb(223, 118, 62);
+	font-size: 24pt;
+	font-weight: bold;
+    margin-left: 20px;
+    width : 150px;
+    height: 40px;
+	margin: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+nav a {
+    color: salmon;
+    text-decoration: none;
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/*
+.chead{
+	width: 1024px;
+	height: 50px;
+}
+.null {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    height: 40px;
+    background: rgb(255, 255, 255);
+}
+
+.search{
+	margin: auto;
+    width : 375px;
+    height: 40px;
+}
+.login{
+	margin: auto;
+    width : 215x;
+    height: 40px;
+}
+*/

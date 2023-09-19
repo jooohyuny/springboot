@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 게시판 글쓰기 모달창 -->
+	<form action="townnews/write" method="post" onsubmit="return titleTextValue()" enctype="multipart/form-data">
+		<div id="modalContainer" class="hidden">
+			<div id="modalContent">
+				<div class="container">
+					<h2 class="centered">게시판 글쓰기</h2>
+				</div>
+				<table class="custom-table">
+					<tr>
+						<td colspan="2" class="center-align">
+							<input type="text" id="modalTitle" placeholder="제목" name="townNewsTitle">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="custom-file-upload">
+							<label> 
+								<input type="file" id="imageUpload" accept="image/*" name="townNewsPhotoo">								
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea placeholder="내용" name="townNewsText"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="center-align">
+							<input hidden name="townNewsMemberId" value="test">
+							<button id="modalInsertButton" type="submit">작성</button>
+							<button id="modalCloseButton" type="button">닫기</button>
+						</td>
+					</tr>	
+				</table>
+			</div>
+		</div>
+	</form>
+	
+</body>
+	
+	<script>
+    // 기존의 게시글 내용을 모달 폼에 설정하는 함수
+    function openEditModal(photo, title, text) {
+        document.getElementById('modalTitle').value = title;
+        document.getElementsByName('townNewsText')[0].value = text;
+
+        // 다른 필요한 작업 수행
+        document.getElementById('modalContainer').classList.remove('hidden');
+    }
+	</script>
+	
+	<script type="text/javascript">
+	// 게시판 작성 유효성 검사
+	function titleTextValue() {
+		var title = document.getElementById("modalTitle").value;
+		var text = document.getElementsByName("townNewsText")[0].value;
+	
+		if (title.trim() === "") {
+			alert("제목을 입력해주세요.");
+			return false;
+		}
+	
+		if (text.trim() === "") {
+			alert("내용을 입력해주세요.");
+			return false;
+		}
+	}
+	</script>
+	
+	<script type="text/javascript">
+		const modalOpenButton = document.getElementById('modalOpenButton');
+		const modalCloseButton = document.getElementById('modalCloseButton');
+		const modal = document.getElementById('modalContainer');
+		
+		modalOpenButton.addEventListener('click', () => {
+			modal.classList.remove('hidden');
+		});
+		
+		modalCloseButton.addEventListener('click', () => {
+			modal.classList.add('hidden');
+			return;
+		});
+	</script>
+	
+</html>

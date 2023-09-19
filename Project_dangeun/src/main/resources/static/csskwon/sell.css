@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+#detailArea {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid black;
+	padding: 20px;
+	background-color: white;
+	max-width: 700px;
+	max-height: 80vh;
+	height: 500px;
+	border: #FFA500 solid 2px;
+	border-radius: 2%;
+}
+
+#detailArea button {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+#profileImg{
+	max-width: 80px;
+	max-height: 80px;
+}
+
+.deleteBtn {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.updateBtn {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.dateUpdateBtn{
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#detailArea textarea {
+	max-height: 80px;
+	width: 100%;
+	overflow: auto;
+	resize: vertical;
+}
+
+#detailImg {
+	max-width: 300px;
+	max-height: 300px;
+	border: #FFA500 solid 2px;
+	border-radius: 4px;
+}
+
+#contentPage {
+	position: relative;
+	width: 1200px;
+	height: 350px;
+	top: 200px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#sellingTbl {
+	position: relative;
+	width: 1200px;
+	height: 250px;
+	top: 520px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.product-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 20px;
+}
+
+.product-card {
+	width: calc(33.33% - 20px);
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	border: #FFA500 solid 2px;
+	border-radius: 5%;
+	max-width: 250px;
+	width: 250px;
+	height: 150px;
+}
+
+#categoryMent {
+	top: 400px;
+	position: relative;
+	text-align: left;
+	left: 10%;
+	margin: 30px;
+	font-size: 24px;
+	color: #FFA500;
+}
+
+.product-photo {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	margin-right: 10px;
+}
+
+.product-info {
+	flex: 1;
+}
+
+#suTextarea {
+	width: 300px;
+	height: 150px;
+	resize: none;
+}
+
+#sellTbl {
+	position: relative;
+	width: 600px;
+	height: 350px;
+	top: 50px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: #FFA500 solid 2px;
+}
+
+#sellTbl input, textarea, select, option{
+	border: #FFA500 solid 1px;
+}
+
+#sellTbl button {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	color: white;
+	padding: 5px 5px;
+	font-size: 13px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #FFA500;
+}
+
+#updateTbl {
+	position: relative;
+	width: 600px;
+	height: 350px;
+	top: 300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: #FFA500 solid 2px;
+}
+
+#updateTbl td{
+	border: #FFA500 solid 2px;
+}
+
+#updateTbl button {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+	color: white;
+	background-color: #FFA500;
+}
+
+#updateTbl input, select, option, textarea {
+	border: #FFA500 solid 1px;
+	border-radius: 5%;
+}
+
+#detailImg {
+	max-width: 200px;
+	max-height: 200px;
+}
+

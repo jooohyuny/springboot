@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function setupHeartToggle(heartButton) {
+		const heartIcon = heartButton.querySelector('.heart-icon');
+		heartButton.addEventListener('click', function() {
+			heartIcon.classList.toggle('active');
+		});
+	}
+	function goDetail(n, m){
+		location.href="go.detail?id=" + n +"&category=" + m;
+		
+	}
+</script>
+
+</head>
+<body>
+	<div id="productDiv">
+		<div id="productTbl" th:each="p:${products}" th:onclick="goDetail([[${p.id}]], '[[${p.category}]]');">
+			<div>
+				<!-- [[${p.photo}]] -->
+				<img th:src="${'/photocho/'+p.photo}" width="40%">
+			</div>
+			<div th:text="${p.id}"></div>
+			<div th:text="${p.name}"></div>
+			<div th:text="${p.price}"></div>
+			<div th:text="${p.description}"></div>
+			<div th:text="${p.view}+'views'"></div>
+			<button id="heartButton" class="heart-button">
+				<span id="heartIcon" class="heart-icon"></span>
+			</button>
+
+
+
+		</div>
+
+	</div>
+	<script>
+		const heartButtons = document.querySelectorAll('.heart-button');
+		heartButtons.forEach(setupHeartToggle);
+	</script>
+</body>
+</html>

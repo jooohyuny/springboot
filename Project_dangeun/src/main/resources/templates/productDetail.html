@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="csskwon/sell.css">
+<script type="text/javascript">
+function addWishlist(productIdd){
+	location.href="/wishlist.add?productId="+productIdd;
+}
+
+function removeWishlist(productIdd){
+	location.href="/wishlist.remove?productId="+productIdd;
+}
+
+function setupHeartToggle(heartButton,productId) {
+	const heartIcon = heartButton.querySelector('.heart-icon');
+	const isHeartActive = localStorage.getItem(`heart_${productId}`) === 'true';
+	
+	// 초기 상태 설정
+    if (isHeartActive) {
+        heartIcon.classList.add('active');
+    } else {
+        heartIcon.classList.remove('active');
+    }
+	
+	heartButton.addEventListener('click', function() {
+		event.stopPropagation();
+		if (heartIcon.classList.contains('active')) {
+			
+			localStorage.setItem(`heart_${productId}`, 'false');
+			heartIcon.classList.remove('active');
+            removeWishlist(productId);
+        } else {
+        	localStorage.setItem(`heart_${productId}`, 'true');
+        	heartIcon.classList.add('active');
+            addWishlist(productId);
+        }
+	});
+}
+
+	function deleteProduct(n){
+		alert("삭제하시겠습니까?")
+		location.href="go.delete?id=" + n;
+	
+	}
+	function goDetail(n, m){
+		location.href="go.detail?id=" + n +"&category=" + m;
+		
+	}
+	
+	function goUpdate(n){
+		location.href="go.update?id=" + n;
+	}
+	
+	function goProfile(id){
+		location.href="go.profile?id=" + id.id;
+	}
+	
+	function doDateUpdate(n){
+		location.href="do.dateupdate?id="+n;
+	}
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+		<table id="detailArea" th:each="d : ${productDetail}">
+			<tr>
+				<td colspan="2" align="center">
+				<img id="detailImg" th:src="${'/photokwon/' + d.photo}">
+				</td>
+			</tr>
+			<tr th:onclick="goProfile([[${d.memberId}]]);">
+				<td>
+					<img id="profileImg" th:src="${'/photokwon/' + d.memberId.photo}">
+				</td>
+				<td th:text="${'판매자 : ' + d.memberId}"></td>
+			</tr>
+			<tr>
+				<td th:text="${d.name}"></td>
+			</tr>
+			<tr>
+				<td th:text="${d.price} + '원'"></td>
+				<td th:text=${d.loc}></td>
+			</tr>
+			<tr>
+				<td id="detailDesc" th:text="${d.description}" colspan="2"></td>
+				<div th:if="${session.loginMember.id != d.memberId.id}">
+				<td><button th:if="${session.loginMember!=null}" 
+					id="heartButton" class="heart-button" 
+					th:data-product-id="${productDetail.id}">
+						<span id="heartIcon" class="heart-icon"></span>
+					</button></td>
+				<td><button>채팅</button></td>
+				</div>
+			</tr>
+			<tr>
+				<td th:text="'조회수 ' + ${d.view}"></td>
+			</tr>
+			<tr th:if="${session.loginMember.id == d.memberId.id}">
+				<td class="updateBtn" th:onclick="goUpdate([[${d.id}]]);">수정</td>
+				<td class="deleteBtn" th:onclick="deleteProduct([[${d.id}]]);">삭제</td>
+				<td class="dateUpdateBtn" th:onclick="doDateUpdate([[${d.id}]]);">끌올</td>
+			</tr>
+		</table>
+	<div id="categoryMent">연관 카테고리 인기 상품</div>
+	<table id="sellingTbl">
+		<tr>
+		<div th:each="s : ${getByCategory}">
+			<td th:onclick="goDetail([[${s.id}]], [[${s.category}]]);">
+				<div class="product-list">
+                <div class="product-card">
+                  <img th:src="${'/photo/' + s.photo}" alt="사진" class="product-photo">
+                    <div class="product-info" th:data-state="${s.state}">
+                        <h2 th:text="${s.name}"></h2>
+                        <p th:text="${s.price} + '원'"></p>
+                        <p th:text="'조회수 ' + ${s.view}"></p>
+                    </div>
+                </div>
+            </div>
+			</td>
+		</div>
+		</tr>
+	</table>
+	<script>
+	const heartButtons = document.querySelectorAll('.heart-button');
+	heartButtons.forEach(function(heartButton) {
+	    const productId = heartButton.getAttribute('data-product-id');
+	    setupHeartToggle(heartButton, productId);
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<head>
+<meta charset="UTF-8">
+<title>당근 마켓</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+   <table id="header">
+      <tr>
+         <td align="center" class="goMain">
+            <img alt="" src="img/carrot.png" class="image-button">
+            <a id="goMain" href="#">당근 마켓</a>
+         </td>
+         <td class="searchArea" align="center">
+            <input placeholder="search">
+            <button>검색</button>
+         </td>
+         <td align="center">
+            <button>로그인, 회원가입</button>
+         </td>
+      </tr>
+   </table>
+   <table id="menuTbl" border="1">
+      <tr align="center">
+         <td>
+            <div class="dropdown">
+               카테고리
+               <div class="dropdown-content">
+                  <a href="#">옵션 1</a> <a href="#">옵션 2</a> <a href="#">옵션 3</a>
+               </div>
+            </div>
+         </td>
+         <td><a href="#">전체 매물</a></td>
+         <td><a th:href="@{/townnews.go}">게시판</a></td>
+      </tr>
+   </table>
+
+   <button id="sellBtn">+</button>
+</body>
+</html>

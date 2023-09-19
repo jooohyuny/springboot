@@ -1,0 +1,74 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-189cd9e1dbd-1ddff09c8ffb71d2": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "195.168.9.85",
+			"save-password": true,
+			"configuration": {
+				"host": "195.168.9.85",
+				"port": "1521",
+				"database": "xe",
+				"url": "jdbc:oracle:thin:@195.168.9.85:1521:xe",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SID"
+				},
+				"auth-model": "oracle_native"
+			}
+		},
+		"oracle_thin-18a44a075d6-3ecad8f2ad62909f": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "195.168.9.142",
+			"save-password": true,
+			"configuration": {
+				"host": "195.168.9.142",
+				"port": "1521",
+				"database": "xe",
+				"url": "jdbc:oracle:thin:@195.168.9.142:1521:xe",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"properties": {
+					"useFetchSizeWithLongColumn": "true",
+					"loginTimeout": "20",
+					"oracle.jdbc.fanEnabled": "false"
+				},
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SID",
+					"show-only-one-schema@": "false",
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "true",
+					"@dbeaver-meta-use-alternative-table-query@": "false",
+					"oracle.meta-search-in-synonyms": "false",
+					"oracle.show-date-as-date": "false"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {"oracle_thin-18a44a075d6-3ecad8f2ad62909f":{"CARROT1":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202309041231\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-18a44a075d6-3ecad8f2ad62909f\"\u003e\u003centity id\u003d\"1\" name\u003d\"MEMBER\" fq-name\u003d\"CARROT1.\u0026quot;MEMBER\u0026quot;\" order\u003d\"0\" font\u003d\"Segoe UI:9:0\" x\u003d\"560\" y\u003d\"454\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"PRODUCT\" fq-name\u003d\"CARROT1.PRODUCT\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"750\" y\u003d\"312\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"PURCHASE_HISTORY\" fq-name\u003d\"CARROT1.PURCHASE_HISTORY\" order\u003d\"2\" font\u003d\"Segoe UI:9:0\" x\u003d\"20\" y\u003d\"20\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"REPORT\" fq-name\u003d\"CARROT1.REPORT\" order\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"199\" y\u003d\"97\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"TOWNNEWS\" fq-name\u003d\"CARROT1.TOWNNEWS\" order\u003d\"4\" font\u003d\"Segoe UI:9:0\" x\u003d\"199\" y\u003d\"630\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"TOWNNEWS_REPLY\" fq-name\u003d\"CARROT1.TOWNNEWS_REPLY\" order\u003d\"5\" font\u003d\"Segoe UI:9:0\" x\u003d\"20\" y\u003d\"735\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"7\" name\u003d\"WISHLIST\" fq-name\u003d\"CARROT1.WISHLIST\" order\u003d\"6\" font\u003d\"Segoe UI:9:0\" x\u003d\"782\" y\u003d\"659\"\u003e\u003cpath name\u003d\"CARROT1\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"PRODUCT_MEMBER_ID\" fq-name\u003d\"CARROT1.PRODUCT.PRODUCT_MEMBER_ID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"2\"/\u003e\u003crelation name\u003d\"PURCHASE_HISTORY_MEMBER_ID\" fq-name\u003d\"CARROT1.PURCHASE_HISTORY.PURCHASE_HISTORY_MEMBER_ID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"REPORT_M_REPORTEDID\" fq-name\u003d\"CARROT1.REPORT.REPORT_M_REPORTEDID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"4\"/\u003e\u003crelation name\u003d\"REPORT_M_WRITERID\" fq-name\u003d\"CARROT1.REPORT.REPORT_M_WRITERID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"4\"/\u003e\u003crelation name\u003d\"TOWNNEWS_M_ID\" fq-name\u003d\"CARROT1.TOWNNEWS.TOWNNEWS_M_ID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"TOWNNEWS_R_M_ID\" fq-name\u003d\"CARROT1.TOWNNEWS_REPLY.TOWNNEWS_R_M_ID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"WISHLIST_MEMBER_ID\" fq-name\u003d\"CARROT1.WISHLIST.WISHLIST_MEMBER_ID\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"7\"/\u003e\u003crelation name\u003d\"PURCHASE_HISTORY_PRODUCT_ID\" fq-name\u003d\"CARROT1.PURCHASE_HISTORY.PURCHASE_HISTORY_PRODUCT_ID\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"WISHLIST_PRODUCT_ID\" fq-name\u003d\"CARROT1.WISHLIST.WISHLIST_PRODUCT_ID\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"7\"/\u003e\u003crelation name\u003d\"TOWNNEWS_TR_T_ID\" fq-name\u003d\"CARROT1.TOWNNEWS_REPLY.TOWNNEWS_TR_T_ID\" type\u003d\"fk\" pk-ref\u003d\"5\" fk-ref\u003d\"6\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800
+		}
+	}
+}

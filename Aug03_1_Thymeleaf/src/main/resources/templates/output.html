@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(v, v2){
+		alert(v);
+		alert(v2);		
+	}
+</script>
+</head>
+<body>
+	<!-- 
+		.jsp
+			El : 값받아오는
+			JSTL : 약간의 if문, for문, 출력형식 지정하고..
+	 -->
+	 
+	<h2>계산 결과</h2>
+
+	 <!-- 
+	 	MVC패턴 -> .jsp에 자바소스 X
+	 	EL : ${param.파라메터명}
+	  -->
+	<!-- EL -------------->
+	x : <h3 th:text="${param.xx}"></h3>
+	y : <h3>[[${param.yy}]]</h3>
+	<hr>				
+	<!-- 기본형급 : ${어트리뷰트명} -->
+	<h3 th:text="${a}"></h3>
+	<hr>				
+	<!-- 객체급 : ${어트리뷰트명.멤버변수명} -->
+	<h3 th:text="${crrr.hab}"></h3>
+	<h3 th:text="${crrr.cha}"></h3>
+	<h3 th:text="${crrr.gob}"></h3>
+	<h3 th:text="${crrr.moks}"></h3>
+	<hr>
+	<!-- 컬렉션급 : ${어트리뷰트명[인덱스 혹은 키값].멤버변수명} -->
+	<h3 th:text="${b[0].name}"></h3>
+	<h3>[[${c['ㄱ'].price}]]</h3>	
+	<hr>
+	
+	<!-- 세션 어트리뷰트 : $(session.어트리뷰트명...} -->	
+	<h3 th:text="${session.d}"></h3>	
+	<hr>
+	
+	<!-- JSTL ------------------------->
+	<!-- 
+		JSTL : DOM객체형태
+		Thymeleaf : DOM객체의 속성형태
+	 -->
+	<!-- JSTL-core--------------------->
+	<!-- else if는 없음 unless : 주어진 조건식이 아니면..-->
+	[[${e}]]<br>
+	<h1 th:if="${e % 2 == 1}">홀수</h1>
+	<h1 th:unless="${e % 2 == 1}">짝수</h1>
+	
+	<!-- 클래식 for는 없음 -->
+	<table border="1">
+		<!-- 변수명 : ${그거} -->
+		<tr th:each="s : ${b}">
+			<td th:text="${s.name}"></td>
+			<td>[[${s.price}]]</td>
+		</tr>	
+	</table>
+
+	<table border="1">
+		<!-- 변수명, 인덱스정보 : ${그거} -->
+		<!-- index: 01234, count: 12345, count: 전체갯수 -->
+		<tr th:each="s, iInfo : ${b}">
+			<td th:text="${iInfo.index}"></td>
+			<td th:text="${iInfo.count}"></td>
+			<td th:text="${iInfo.size}"></td>						
+			<td th:text="${s.name}"></td>
+			<td>[[${s.price}]]</td>
+		</tr>	
+	</table>
+
+	<table border="1">
+		<!-- 변수명, 인덱스정보 : ${그거} -->
+		<!-- index: 01234, count: 12345, count: 전체갯수 -->
+		<tr th:each="s : ${c}">
+			<td th:text="${s.key}">
+			<td th:text="${s.value}">
+		</tr>
+		<tr th:each="s : ${c}">
+			<td th:text="${s.value.name}">
+			<td th:text="${s.value.price}">		
+		</tr>
+	</table>
+	<hr>
+	<!-- JSTL-formatting------------ -->
+	<h3 th:text="${#numbers.formatInteger(f, 10, 'COMMA')}"></h3>
+	<h3 th:text="${#numbers.formatDecimal(g, 1, 3)}"></h3>	
+	<hr>
+	<!-- 그거, '형식' -->
+	<h3 th:text="${#dates.format(h, 'yyyy/MM/dd')}"></h3>
+	
+	<!-- jsp:include : 전체 가져오기------------>
+	<!-- 부분만 가져오기가 가능------------>
+	<table border="1">
+		<tr>
+			<td th:insert="~{${contentPage} :: ${contentPageSub}}"></td>
+		</tr>
+	</table>
+	<!-- 기타----------- -->
+	<!-- 내용이 아닌 속성으로 들어가는 것이면 th:속성명
+		 값 넣어야 하면 '[[${that}]]' -->
+	<button th:onclick="test([[${a}]], [[${f}]]);">버튼</button>
+	<hr>
+	<!-- 인터넷 주소는 폼이 다름 -->
+	<a th:href="@{${i}}">네이버로</a>
+</body>
+</html>

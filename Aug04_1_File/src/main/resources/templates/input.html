@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		1) 파일이 업로드 될 폴더 확보(서버)
+			-> 프로젝트에 폴더 만들어놓고 war로 배포하면 
+			-> 압축이 풀리면서 서버쪽에도 만들어질테니
+			=> war수정 
+				-> 압축이 풀리면서 기존에 업로드된 파일이 다 지워짐
+				-> 보안?
+			-> 그냥 서버에 폴더를 만들어라
+		
+		2) 글자/숫자는 인코딩 가능, 파일은 인코딩 불가
+			-> cos.jar
+			=> cos.jar역할 하는 클래스가 있음
+	 -->
+	<form action="file.upload"
+		method="post" enctype="multipart/form-data">
+		제목 : <input name="title"><p>
+		사진 : <input name="photooo" type="file"><p>
+		<button>업로드</button>
+	</form>
+</body>
+</html>

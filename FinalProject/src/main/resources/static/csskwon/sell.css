@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+#detailArea {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid black;
+	padding: 20px;
+	background-color: white;
+	max-width: 700px;
+	max-height: 80vh;
+	height: 500px;
+	border: #FFA500 solid 2px;
+	border-radius: 2%;
+}
+
+#detailArea button {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#profileImg{
+	max-width: 80px;
+	max-height: 80px;
+}
+
+.deleteBtn {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.updateBtn {
+	border: #FFA500 solid 1px;
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#detailArea textarea {
+	max-height: 80px;
+	width: 100%;
+	overflow: auto;
+	resize: vertical;
+}
+
+#detailImg {
+	max-width: 300px;
+	max-height: 300px;
+	border: #FFA500 solid 2px;
+	border-radius: 4px;
+}
+
+#contentPage {
+	position: relative;
+	width: 1200px;
+	height: 350px;
+	top: 200px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#productTbl {
+	position: relative;
+	width: 1200px;
+	height: 300px;
+	top: 900px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.product-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 20px;
+}
+
+.product-card {
+	width: calc(33.33% - 20px);
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	border: #FFA500 solid 2px;
+	border-radius: 5%;
+	max-width: 250px;
+}
+
+#categoryMent {
+	top: 800px;
+	position: relative;
+	text-align: left;
+	left: 18%;
+	margin: 30px;
+	font-size: 24px;
+	color: #FFA500;
+}
+
+.product-photo {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	margin-right: 10px;
+}
+
+.product-info {
+	flex: 1;
+}
+

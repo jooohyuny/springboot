@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>신고내역</title>
+<script type="text/javascript">
+function getReportDetail(n,rId){
+	location.href="/mystore.report.detail?id="+ n + "&reportId=" + rId;
+}
+</script>
+<style type="text/css">
+.report-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.report-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.report-item.header {
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.report-item:nth-child(even) {
+    background-color: #FFD700;
+}
+
+.item {
+    flex: 1;
+    padding: 5px;
+}
+
+.item.id {
+    flex: 0.5;
+    text-align: center;
+}
+
+.detail-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<!-- <div id="productDivReport">
+    <div class="report-list">
+        <div class="report-item header" align="center">
+            <div class="item">제목</div>
+            <div class="item">신고대상</div>
+            <div class="item">작성일</div>
+            <div class="item">카테고리</div>
+            <div class="item">상세 조회</div>
+        </div>
+        <div th:each="r : ${report}" class="report-item" align="center">
+            <div class="item title" th:text="${r.title}"></div>
+            <div class="item reported-id" th:text="${r.reportedId.id}"></div>
+            <div class="item date" th:text="${r.date}"></div>
+            <div class="item category" th:text="${r.category}"></div>
+            <div class="item detail">
+                <a class="detail-button" th:href="@{/mystore.report.detail(rId=${r.id})}">상세조회</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div id="productDivReport">
+     <table id="rTable">
+        <tr class="header-row" align="left">
+            <th>제목</th>
+            <th>신고대상</th>
+            <th>작성일</th>
+            <th>카테고리</th>
+            <th>상세 조회</th>
+        </tr>
+        <tr class="list-row" th:each="r : ${report}">
+            <td class="report-title" th:text="${r.title}"></td>
+            <td th:text="${r.reportedId.id}"></td>
+            <td th:text="${r.date}"></td>
+            <td th:text="${r.category}"></td>
+            <td>
+                <a class="detail-button" th:href="@{/mystore.report.detail(rId=${r.id})}">상세 조회</a>
+            </td>
+        </tr>
+    </table> 
+</div>
+ </body>
+</html>

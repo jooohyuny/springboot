@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="csskwon/index.css">
+<script type="text/javascript" src="jskwon/carrotCheck.js"></script>
+<script type="text/javascript" src="jskwon/carrotValidCheck.js"></script>
+</head>
+<body>
+	<table id="header">
+		<tr>
+			<td align="center" class="goMain"><img alt=""
+				src="img/carrot.png" class="image-button"> <a id="goMain"
+				href="#">당근 마켓</a></td>
+			<td class="searchArea" align="center"><input
+				placeholder="search" autocomplete="none">
+				<button>검색</button></td>
+			<td align="center">
+				<button>로그인, 회원가입</button>
+			</td>
+		</tr>
+	</table>
+	<table id="menuTbl" border="1">
+		<tr align="center">
+			<td style="color: white;">
+				<div class="dropdown">
+					카테고리
+					<div class="dropdown-content">
+						<a href="#">옵션 1</a> <a href="#">옵션 2</a> <a href="#">옵션 3</a>
+					</div>
+				</div>
+			</td>
+			<td><a href="#">전체 매물</a></td>
+			<td><a href="#">게시판</a></td>
+		</tr>
+	</table>
+	<form action="sellUpload" method="post" enctype="multipart/form-data" onsubmit="return uploadCheck(this);">
+		<table id="sellTbl" border="1">
+			<tr>
+				<td><select name="category">
+						<option>카테고리를 선택하세요.</option>
+						<option>---------------------------------</option>
+						<option>패션</option>
+						<option>전자</option>
+						<option>생활</option>
+						<option>스포츠</option>
+						<option>가구</option>
+						<option>반려동물</option>
+						<option>취미</option>
+						<option>기타</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input name="photoo" type="file" multiple="multiple"></td>
+			</tr>
+			<tr>
+				<td>
+					<input placeholder="상품명을 입력하세요." name="name">
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td th:each="s : ${sell}">
+					<input name="id" value="${s.id}"> 
+				</td>
+				<td>
+					<input placeholder="가격을 입력하세요." name="price">
+					<input hidden name="view" value="0">
+					<input hidden name="memberId" th:value="${session.loginMember.id}">
+					<input hidden name="loc" th:value="${session.loginMember.loc}">
+					<input hidden name="state" value="판매중">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id= "suTextarea" placeholder="상품 설명을 입력하세요."name="description"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<button>등록</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

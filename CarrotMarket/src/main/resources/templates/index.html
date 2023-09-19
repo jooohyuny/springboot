@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>당근 마켓</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<table id="header">
+		<tr>
+			<td>
+				<table id="siteTitle">
+					<tr>
+						<td align="center" class="siteLogo">
+						<img src="img/carrot.png" class="image-button">
+						<a href="index.do">당근마켓</a>
+						</td>
+						<td class="searchArea" align="center">
+            				<input placeholder="search">
+            				<button>검색</button>
+         				</td>
+						<td align="center">
+							<a href="member.login">
+							<button>로그인, 회원가입	</button>
+							<!-- 나중에 아래같은 느낌으로 바꾸기
+							이거는 로그인 안하면 login.jsp같은느낌이었다가 
+							로그인하면 menu.jsp같은 느낌으로 변경
+							<jsp:include page="${loginPage }"></jsp:include>
+							 -->
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+						<span id="resultArea">ㅋㅋresult쓰는데</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table id="menuTbl" border="1">
+      <tr align="center">
+         <td>
+            <div class="category">
+               카테고리
+               <div class="categoryList">
+                  <a href="#">옵션 1</a> <a href="#">옵션 2</a> <a href="#">옵션 3</a>
+               </div>
+            </div>
+         </td>
+         <td><a href="#">전체 매물</a></td>
+         <td><a href="#">게시판</a></td>
+      </tr>
+   </table>
+   <table id="contentPage" border="1">
+      <tr>
+         <td align="center">
+         매물 목록
+         <!-- 
+         나중에 contentPage만으로 계속해서 변경하는 것으로 바꾸기
+         <jsp:include page="${contentPage }"></jsp:include>
+          -->
+         </td>
+      </tr>
+   </table>
+</body>
+</html>

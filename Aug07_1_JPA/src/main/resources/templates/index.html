@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function updateCoffee(n){
+		location.href= "coffee.update?name=" +n;
+	}
+	function deleteCoffee(n){
+		location.href= "coffee.delete?name=" +n;
+	}
+
+</script>
+</head>
+<body>
+	<form action="coffee.reg">
+		이름 : <input name="name"><p>
+		가격 : <input name="price"><p>
+		<button>등록</button>
+	</form>
+	[[${result}]]
+	<hr>
+	<table border="1">
+		<tr th:each="c : ${coffees}">
+			<td th:text="${c.name}" th:onclick="deleteCoffee([[${c.name}]]);"></td>
+			<td th:text="${c.price}" th:onclick="updateCoffee([[${c.name}]]);"></td>
+		</tr>
+	</table>
+</body>
+</html>

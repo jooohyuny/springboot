@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'Cafe24Ssurround';
+	background-color: #f7f7f7;
+}
+
+.loginPage {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loginPage h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.loginInput {
+	margin-bottom: 15px;
+}
+
+.loginInput label {
+	display: block;
+	font-weight: bold;
+}
+
+.loginInput input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.loginBtn {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: rgb(255, 128, 64);
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.joinBtn {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #0070c9;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.loginBtn:hover {
+	background-color: rgb(255, 206, 176);
+}
+.loginBtn:hover {
+	background-color: rgb(191, 191, 255);
+}
